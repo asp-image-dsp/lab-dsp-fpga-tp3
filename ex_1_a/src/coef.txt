@@ -1,0 +1,5 @@
+alpha			EQU			0.09839579390151451
+beta			EQU			0.30320841219697103
+gamma			EQU			0.7001685777752599
+mu			  EQU			0
+sigma			EQU			-1
