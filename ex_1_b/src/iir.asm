@@ -11,13 +11,13 @@
 ; Executes a second order IIR using the direct form.
 ; It is expected that the first time the subroutine is called, X0 is loaded
 ; with the alpha coefficient. The subroutine expects that the X0 register always
-; contains the alpha coefficient.
+; contains the alpha coefficient of the first second order section, and
+; X1 is loaded iwth the beta coefficient of the same section.
 ;
 ; @param    Y1 Input sample x(n)
 ; @param    R0 Pointer to the coefficients 
-; @param    R4 Pointer to the input samples
-; @param    R5 Pointer to the output samples
-; @return   X1 Output sample y(n)
+; @param    R4 Pointer to the previous samples to be used by the filter
+; @return   Y1 Output sample y(n)
 ;=======================================================================
 iir     MACRO           nsec
 iir_casc
