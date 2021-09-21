@@ -260,7 +260,7 @@ ssi_rx_isr
 	jmp	endisr
 	    
 	
-esright move	#0,x1			;mute the other channel
+esright move	#0,y1			;mute the other channel
     
 endisr  movep   y1,x:M_TX00        	; write d/a data
 	bchg	#Left_ch,x:bits

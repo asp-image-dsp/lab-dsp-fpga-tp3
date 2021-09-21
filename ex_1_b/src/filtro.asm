@@ -65,8 +65,8 @@ inifil	        MOVE    #xbuf,R4                ; Pointer to states
                 MOVE    #coef,R0                ; Pointer to coefficients
                 MOVE    #1,M4                   ; Modulo 2 for xbuf pointer
                 MOVE    #5*nsec-1,M0            ; R0 circular pointer modulo 5*nsec
-                MOVE    X:(R0)+,X1              ; Save beta1 in X1 for first run
-                MOVE    X:(R0)+,X0              ; Save alpha1 in X0 for first run
+				MOVE    X:(R0)+,X1              ; Save beta1 in X1 for first run
+				MOVE    X:(R0)+,X0              ; Save alpha1 in X0 for first run
                 MOVE    #2,N4
 ;******************************************************************************
 	        MOVEP	#$0001,X:M_HPCR 	; Port B I/O mode select
@@ -75,5 +75,5 @@ inifil	        MOVE    #xbuf,R4                ; Pointer to states
                 JSR     ada_init                ; Initialize codec
 		JMP     *	
                 INCLUDE 'ada_init.asm'		; Used to include codec initialization routines
-                iir     nsec
+                iir     nsec,xbuf,coef
                 END
