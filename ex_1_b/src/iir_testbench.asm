@@ -85,7 +85,7 @@ y_start   DS          50
 ;=======================================================================
 ; PROGRAM MEMORY SPACE
 ;=======================================================================
-          ORG         P:$0000
+          ORG         P:$E100
           iir         nsec
 
           ORG         P:$E000
@@ -107,5 +107,5 @@ main      EQU         *
           DO          #(x_end-x_start+1),END
           MOVE        Y:(R6)+,Y1
           JSR         iir_casc
-          MOVE        X1,Y:(R7)+
+          MOVE        Y1,Y:(R7)+
 END

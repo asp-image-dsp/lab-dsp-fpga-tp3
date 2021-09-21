@@ -21,7 +21,7 @@
 ;=======================================================================
 iir     MACRO           nsec
 iir_casc
-        MOVE            #$0B00,SR                       ; Setting scaling mode for doubling the output
+        ORI             #$08,MR                         ; Setting scaling mode for doubling the output
         MOVE            (R4)+                           ; Point to next xbuf (buffer with previous values) entry
         
         DO #nsec,sectn
